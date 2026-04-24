@@ -1,0 +1,19 @@
+{
+  "table_name": "FUNDCOMPANY",
+  "columns": [
+    {"name": "id", "data_type": "bigint", "nullable": false, "description": "PK công ty quản lý quỹ"},
+    {"name": "name", "data_type": "string", "nullable": true, "description": "Tên công ty"},
+    {"name": "shortname", "data_type": "string", "nullable": true, "description": "Tên viết tắt"},
+    {"name": "ename", "data_type": "string", "nullable": true, "description": "Tên tiếng Anh"},
+    {"name": "capital", "data_type": "decimal(23,2)", "nullable": true, "description": "Vốn điều lệ"},
+    {"name": "createdby", "data_type": "string", "nullable": true, "description": "Người tạo"},
+    {"name": "datecreated", "data_type": "timestamp", "nullable": true, "description": "Ngày tạo"},
+    {"name": "datemodified", "data_type": "timestamp", "nullable": true, "description": "Ngày cập nhật"},
+    {"name": "naid", "data_type": "bigint", "nullable": true, "description": "Mã quốc gia"},
+    {"name": "statusid", "data_type": "bigint", "nullable": true, "description": "Mã trạng thái"},
+    {"name": "director", "data_type": "string", "nullable": true, "description": "Tổng giám đốc"},
+    {"name": "depcert", "data_type": "string", "nullable": true, "description": "Chứng nhận lưu ký"},
+    {"name": "description", "data_type": "string", "nullable": true, "description": "Ghi chú"},
+    {"name": "data_date", "data_type": "date", "nullable": false, "description": "Ngày dữ liệu"}
+  ]
+}

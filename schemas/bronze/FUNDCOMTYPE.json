@@ -1,0 +1,8 @@
+{
+  "table_name": "FUNDCOMTYPE",
+  "columns": [
+    {"name": "fundid", "data_type": "bigint", "nullable": false, "description": "FK công ty quản lý quỹ"},
+    {"name": "comtypeid", "data_type": "bigint", "nullable": true, "description": "Mã loại hình doanh nghiệp"},
+    {"name": "data_date", "data_type": "date", "nullable": false, "description": "Ngày dữ liệu"}
+  ]
+}

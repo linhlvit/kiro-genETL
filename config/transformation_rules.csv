@@ -1,0 +1,2 @@
+Rule Name,Rule Type,SQL Template,Is Exception,Description
+hash_id,HASH,"sha2(concat_ws('|', {args}), 256)",false,Surrogate key bằng SHA-256. Dùng cho tất cả hash keys trong project.

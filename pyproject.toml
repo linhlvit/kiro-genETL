@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbt-job-generator"
+version = "0.1.0"
+description = "Auto-generate dbt models (Spark SQL) from approved mapping CSV files"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "hypothesis>=6.82",
+]
+spark = [
+    "pyspark>=3.4",
+]
+
+[project.scripts]
+dbt-job-gen = "dbt_job_generator.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["dbt_job_generator*"]

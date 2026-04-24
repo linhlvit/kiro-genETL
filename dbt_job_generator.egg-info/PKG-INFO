@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: dbt-job-generator
+Version: 0.1.0
+Summary: Auto-generate dbt models (Spark SQL) from approved mapping CSV files
+Requires-Python: >=3.10
+Requires-Dist: click>=8.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: hypothesis>=6.82; extra == "dev"
+Provides-Extra: spark
+Requires-Dist: pyspark>=3.4; extra == "spark"

@@ -1,0 +1,12 @@
+{
+  "table_name": "THONG_TIN_DK_THUE",
+  "columns": [
+    {"name": "id", "data_type": "bigint", "nullable": false, "description": "PK mã số thuế"},
+    {"name": "email_kd", "data_type": "string", "nullable": true, "description": "Email kinh doanh"},
+    {"name": "fax_kd", "data_type": "string", "nullable": true, "description": "Fax kinh doanh"},
+    {"name": "fax", "data_type": "string", "nullable": true, "description": "Fax"},
+    {"name": "dien_thoai_kd", "data_type": "string", "nullable": true, "description": "Điện thoại kinh doanh"},
+    {"name": "dien_thoai", "data_type": "string", "nullable": true, "description": "Điện thoại"},
+    {"name": "data_date", "data_type": "date", "nullable": false, "description": "Ngày dữ liệu"}
+  ]
+}

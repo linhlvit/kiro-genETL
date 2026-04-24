@@ -1,0 +1,14 @@
+{
+  "fund_management_company": {
+    "mapping_hash": "7ab5d6423e3e2d9ac6dd2e66a71b9db1",
+    "generated_at": "2026-04-24T12:40:24.407465+00:00",
+    "sql_file": "fund_management_company.sql",
+    "test_file": "test_fund_management_company_spark.py"
+  },
+  "involved_party_electronic_address": {
+    "mapping_hash": "6dab9a8c77ede479a1c85031c0857cc8",
+    "generated_at": "2026-04-24T12:40:24.407465+00:00",
+    "sql_file": "involved_party_electronic_address.sql",
+    "test_file": "test_involved_party_electronic_address_spark.py"
+  }
+}

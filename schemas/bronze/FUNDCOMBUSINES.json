@@ -1,0 +1,8 @@
+{
+  "table_name": "FUNDCOMBUSINES",
+  "columns": [
+    {"name": "fundid", "data_type": "bigint", "nullable": false, "description": "FK công ty quản lý quỹ"},
+    {"name": "buid", "data_type": "bigint", "nullable": true, "description": "Mã nghiệp vụ kinh doanh"},
+    {"name": "data_date", "data_type": "date", "nullable": false, "description": "Ngày dữ liệu"}
+  ]
+}

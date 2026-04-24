@@ -1,0 +1,10 @@
+{
+  "table_name": "TTKDT_NGUOI_DAI_DIEN",
+  "columns": [
+    {"name": "id", "data_type": "bigint", "nullable": false, "description": "PK người đại diện"},
+    {"name": "email", "data_type": "string", "nullable": true, "description": "Email"},
+    {"name": "fax", "data_type": "string", "nullable": true, "description": "Fax"},
+    {"name": "dien_thoai", "data_type": "string", "nullable": true, "description": "Điện thoại"},
+    {"name": "data_date", "data_type": "date", "nullable": false, "description": "Ngày dữ liệu"}
+  ]
+}

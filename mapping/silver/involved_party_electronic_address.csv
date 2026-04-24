@@ -1,0 +1,24 @@
+﻿Target,Bảng đích,,,,,,,,,
+Database,Schema,Table Name,ETL Handle,,,,Description,Last update,Update by,Update reason
+,silver,Involved Party Electronic Address,SCD4A,,,,Lưu trữ các địa chỉ liên lạc điện tử của Involved Party (điện thoại/fax/email). Mỗi dòng = 1 kênh liên lạc từ 1 nguồn.,,,
+Input,Bảng / CTE nguồn,,,,,,,,,
+#,Source Type,Schema,Table Name,Alias,Select Fields,Filter,Description,Last update,Update by,Update reason
+1,physical_table,bronze,THONG_TIN_DK_THUE,th_ti_dk_th,"id, email_kd, fax_kd, fax, dien_thoai_kd, dien_thoai, 'DCST_THONG_TIN_DK_THUE' AS source_system_code","data_date = to_date('{{ var(""etl_date"") }}', 'yyyy-MM-dd')",,,,
+2,unpivot_cte,,th_ti_dk_th,leg_th_ti_dk_th,ip_code=id | EMAIL:email_kd | FAX:fax_kd | FAX:fax | PHONE:dien_thoai_kd | PHONE:dien_thoai | source_system_code,address_value IS NOT NULL,,,,
+3,physical_table,bronze,TTKDT_NGUOI_DAI_DIEN,tt_ng_da_di,"id, email, fax, dien_thoai, 'DCST_TTKDT_NGUOI_DAI_DIEN' AS source_system_code","data_date = to_date('{{ var(""etl_date"") }}', 'yyyy-MM-dd')",,,,
+4,unpivot_cte,,tt_ng_da_di,leg_tt_ng_da_di,ip_code=id | EMAIL:email | FAX:fax | PHONE:dien_thoai | source_system_code,address_value IS NOT NULL,,,,
+Relationship,Quan hệ giữa các bảng / CTE nguồn,,,,,,,,,
+#,Main Alias,Join Type,Join Alias,Join On,,,Description,Last update,Update by,Update reason
+,,,,,,,,,,
+Mapping,Mapping trường nguồn → trường đích,,,,,,,,,
+#,Target Column,Transformation,Data Type,,,,Description,Last update,Update by,Update reason
+1,involved_party_id,"hash_id(leg_th_ti_dk_th.source_system_code, leg_th_ti_dk_th.ip_code)",string,,,,,,,
+2,involved_party_code,leg_th_ti_dk_th.ip_code,string,,,,,,,
+3,source_system_code,leg_th_ti_dk_th.source_system_code,string,,,,,,,
+4,electronic_address_type_code,leg_th_ti_dk_th.type_code,string,,,,,,,
+5,electronic_address_value,leg_th_ti_dk_th.address_value,string,,,,,,,
+Final Filter,Điều kiện lọc của Main Transform,,,,,,,,,
+#,Clause Type,Expression,,,,,Description,Last update,Update by,Update reason
+1,UNION ALL,"SELECT * FROM leg_th_ti_dk_th
+UNION ALL
+SELECT * FROM leg_tt_ng_da_di",,,,,Dùng khi merge nhiều luồng vào cùng 1 bảng đích,,,

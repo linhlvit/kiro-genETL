@@ -1,0 +1,10 @@
+{
+  "table_name": "involved_party_electronic_address",
+  "columns": [
+    {"name": "involved_party_id", "data_type": "string", "nullable": false, "description": "Surrogate key cho Involved Party"},
+    {"name": "involved_party_code", "data_type": "string", "nullable": false, "description": "Mã định danh Involved Party"},
+    {"name": "source_system_code", "data_type": "string", "nullable": false, "description": "Mã nguồn dữ liệu"},
+    {"name": "electronic_address_type_code", "data_type": "string", "nullable": false, "description": "Loại địa chỉ: EMAIL, FAX, PHONE"},
+    {"name": "electronic_address_value", "data_type": "string", "nullable": false, "description": "Giá trị địa chỉ điện tử"}
+  ]
+}
